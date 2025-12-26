@@ -6,18 +6,19 @@
     <title>Brand Identity Proposal | Twin Dave Creatives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f1115;
-            --bg-card: #161b22;
-            --primary: #3b82f6; /* Sky Blue reference */
-            --accent: #ef4444; /* Red reference */
-            --gold: #d4af37;
+            --bg-dark: #0b0d10;
+            --bg-card: #151921;
+            --bg-card-hover: #1c212b;
+            --primary: #3b82f6; /* Sky Blue */
+            --accent: #ef4444; /* Red */
+            --gold: #fbbf24;
             --text-main: #ffffff;
-            --text-muted: #9ca3af;
-            --glass: rgba(22, 27, 34, 0.7);
-            --border: rgba(255, 255, 255, 0.1);
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(21, 25, 33, 0.85);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,13 +29,10 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
+            padding-bottom: 80px;
         }
 
-        h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
-
-        /* --- Animations --- */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes glow { 0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); } 50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); } 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); } }
+        h1, h2, h3, h4, .btn-buy, .name-title { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
 
         /* --- Header --- */
         header {
@@ -44,169 +42,156 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 15px 5%;
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
 
-        .logo-container { display: flex; align-items: center; gap: 15px; }
-        .logo-container img { height: 50px; width: auto; object-fit: contain; }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-container img { height: 45px; width: auto; }
         .client-badge { 
-            background: linear-gradient(45deg, var(--primary), #1d4ed8); 
-            padding: 5px 15px; 
-            border-radius: 20px; 
-            font-size: 0.75rem; 
+            background: linear-gradient(135deg, var(--primary), #1e3a8a); 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
             font-weight: 700; 
             letter-spacing: 1px;
         }
 
         /* --- Hero --- */
         .hero {
-            height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1e2532 0%, var(--bg-dark) 70%);
+            background: radial-gradient(circle at 50% 50%, #1e2532 0%, var(--bg-dark) 80%);
             padding: 20px;
+            margin-bottom: 40px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            line-height: 1;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
             background: -webkit-linear-gradient(#fff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 40px;
-            animation: fadeIn 1.5s ease-out;
+            max-width: 600px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            opacity: 0.7;
-            animation: glow 3s infinite;
+        /* --- Reference Table (Naming Rules) --- */
+        .rules-section {
+            padding: 20px;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto; 
+            margin-right: auto;
         }
 
-        /* --- Sections --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 100px 0 50px;
-            color: var(--primary);
-            letter-spacing: 5px;
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .rules-table th { background: #1e293b; color: var(--primary); padding: 15px; text-align: left; }
+        .rules-table td { padding: 15px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+        .rules-table tr:last-child td { border-bottom: none; }
+        
+        /* --- Category Sections --- */
+        .category-header {
+            padding: 0 5%;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            margin-left: 5%;
         }
 
-        /* --- Cards Grid --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 100px;
-        }
+        .category-title { font-size: 2rem; color: #fff; letter-spacing: 2px; }
+        .category-desc { color: var(--text-muted); font-size: 0.9rem; }
 
+        /* --- Horizontal Scrolling Container --- */
+        .scroller {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 5% 40px 5%; /* Padding bottom for shadow */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .scroller::-webkit-scrollbar { height: 6px; }
+        .scroller::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        /* --- Card Design --- */
         .card {
+            flex: 0 0 85vw; /* Mobile First Width */
+            max-width: 400px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .card-header {
+            padding: 25px;
+            scroll-snap-align: center;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        @media(min-width: 768px) {
+            .card { flex: 0 0 350px; }
         }
 
         .name-title {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.2rem;
             color: #fff;
             margin-bottom: 5px;
+            background: linear-gradient(90deg, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .name-tag {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .rationale {
+        .concept-text {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-left: 2px solid var(--border);
             padding-left: 15px;
+            min-height: 80px;
         }
 
-        /* --- Color Palette Visuals --- */
-        .palette-container {
-            margin-bottom: 25px;
-        }
-        .palette-label { font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; color: #fff; }
-        .swatches { display: flex; gap: 10px; }
-        .swatch {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.2);
-            position: relative;
-            cursor: pointer;
-        }
-        .swatch:hover::after {
-            content: attr(data-code);
-            position: absolute;
-            bottom: 45px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #000;
-            padding: 4px 8px;
-            font-size: 0.7rem;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
+        /* --- Color Section --- */
+        .color-section { margin-bottom: 25px; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; }
+        .color-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; display: block; }
+        
+        .palette-row { display: flex; align-items: center; gap: 15px; margin-bottom: 8px; }
+        .swatch-box { width: 30px; height: 30px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); }
+        .swatch-info { font-size: 0.8rem; color: #fff; font-family: monospace; }
+        .pantone-code { color: var(--text-muted); font-size: 0.7rem; display: block; }
 
-        /* --- Domain Logic --- */
-        .domain-section {
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
-            padding: 15px;
+        /* --- Domain Toggle --- */
+        .domain-area {
             margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
         }
 
-        .domain-toggle-wrapper {
+        .toggle-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -216,7 +201,7 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 50px;
+            width: 46px;
             height: 24px;
         }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -224,7 +209,7 @@
             position: absolute;
             cursor: pointer;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #374151;
+            background-color: #334155;
             transition: .4s;
             border-radius: 34px;
         }
@@ -240,261 +225,624 @@
             border-radius: 50%;
         }
         input:checked + .slider { background-color: var(--primary); }
-        input:checked + .slider:before { transform: translateX(26px); }
+        input:checked + .slider:before { transform: translateX(22px); }
 
-        .domain-details {
+        .domain-result {
             display: none; /* Hidden by default */
-            border-top: 1px solid var(--border);
-            padding-top: 10px;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.4s ease;
         }
 
-        .price-tag {
-            font-size: 1.2rem;
-            color: var(--gold);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 8px;
-        }
-
+        .price { font-size: 1.2rem; color: var(--gold); font-weight: 700; display: block; margin-bottom: 10px; font-family: 'Rajdhani'; }
+        
         .btn-buy {
-            display: inline-block;
+            display: block;
             width: 100%;
+            padding: 12px;
             text-align: center;
-            padding: 10px;
             background: linear-gradient(90deg, #10b981, #059669);
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            transition: 0.2s;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
         }
-        .btn-buy:hover { opacity: 0.9; }
+        .btn-buy:active { transform: scale(0.98); }
 
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            border-top: 1px solid var(--border);
-            background: #0a0e17;
-            color: var(--text-muted);
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            header { padding: 15px 20px; }
-            .logo-container span { display: none; }
-        }
+        /* --- Mobile Table Fix --- */
+        .table-responsive { overflow-x: auto; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="twindave-logo.png" alt="Twin Dave Creatives Logo" onerror="this.src='https://via.placeholder.com/50x50/3b82f6/ffffff?text=TD'">
-            <span style="font-weight: 700; font-family: 'Rajdhani'; font-size: 1.2rem;">TWIN DAVE</span>
+            <img src="twindave-logo.png" alt="TD Logo" onerror="this.src='https://via.placeholder.com/50x50/3b82f6/ffffff?text=TD'">
+            <span style="font-family:'Rajdhani'; font-weight:700; font-size:1.1rem; letter-spacing:1px;">TWIN DAVE</span>
         </div>
-        <div class="client-badge">Client: Jan Finishing Contractor</div>
+        <div class="client-badge">Client: Jan Finishing</div>
     </header>
 
     <section class="hero">
-        <h4>Identity Proposal</h4>
-        <h1>The Future of<br>Concrete Admixtures</h1>
-        <p>A strategic brand analysis for the new manufacturing venture by Founders Mahir & Daniel. Precision. Strength. Innovation.</p>
-        <div class="scroll-indicator">SCROLL TO EXPLORE NAMES</div>
+        <h4 style="color:var(--primary); letter-spacing:3px; margin-bottom:10px;">Startup Identity</h4>
+        <h1>Concrete<br>Admixture<br>Innovation</h1>
+        <p>Strategic Naming Proposal for Mahir & Daniel's Manufacturing Venture.</p>
+        <div style="font-size:0.8rem; border:1px solid var(--border); padding:8px 20px; border-radius:20px; margin-top:20px;">
+            Swipe Cards horizontally to view options &rarr;
+        </div>
     </section>
 
-    <div class="container">
-        <h2 class="section-title">01. The Innovators (Scientific & Abstract)</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">VYLUM</div>
-                        <div class="name-tag">Abstract / Scientific</div>
-                    </div>
+    <section class="rules-section">
+        <h3 style="margin-bottom:15px; color:#fff;">Naming Strategy Reference</h3>
+        <div class="table-responsive">
+            <table class="rules-table">
+                <thead>
+                    <tr>
+                        <th>Name Type</th>
+                        <th>Description</th>
+                        <th>Global Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Descriptive</td><td>Directly states what the business does</td><td>General Motors</td></tr>
+                    <tr><td>Acronym</td><td>Uses initials to create a memorable name</td><td>IBM / BASF</td></tr>
+                    <tr><td>Invented Word</td><td>A unique, made-up word</td><td>Kodak / Xerox</td></tr>
+                    <tr><td>Compound</td><td>Combines two relevant words</td><td>Facebook / PayPal</td></tr>
+                    <tr><td>Metaphorical</td><td>Uses imagery or symbolism</td><td>Amazon / Nike</td></tr>
+                    <tr><td>Founder Name</td><td>Based on the founder’s name</td><td>Hewlett-Packard</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="category-header">
+        <h2 class="category-title">01. Descriptive</h2>
+        <p class="category-desc">Direct, clear, and professional. States the business function immediately.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">MIX LABS</div>
+            <p class="concept-text">Simple, clear, and highlights the "Laboratory" aspect (state of the art). Tells the client this is engineered precision.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Clinical Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0099ff;"></div>
+                    <div><span class="swatch-info">#0099FF</span><span class="pantone-code">PMS 2925 C</span></div>
                 </div>
-                <p class="rationale">Derived from "Volume" and "Lumen" (light/future). It suggests a chemical solution that adds substance and brightness. Short, 5-letter domain potential, incredibly modern.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: Clinical Precision</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #00f2ea;" data-code="Cyan Neon"></div>
-                        <div class="swatch" style="background: #ffffff;" data-code="Pure White"></div>
-                        <div class="swatch" style="background: #334155;" data-code="Lab Slate"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('vylum', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-vylum" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#ffffff;"></div>
+                    <div><span class="swatch-info">#FFFFFF</span><span class="pantone-code">White</span></div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">NEXCRETE</div>
-                        <div class="name-tag">Descriptive / Future</div>
-                    </div>
-                </div>
-                <p class="rationale">"Next" + "Concrete". Direct, easy to understand, and implies the next generation of building technology. Very strong for SEO within the industry.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: Industrial Strength</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #f59e0b;" data-code="Safety Yellow"></div>
-                        <div class="swatch" style="background: #1e293b;" data-code="Dark Asphalt"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('nexcrete', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-nexcrete" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c1n1')"><span class="slider"></span></label></div>
+                <div id="c1n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">PURE ADMIX</div>
+            <p class="concept-text">Emphasizes purity and quality of the chemicals. "Pure" implies no fillers, just high-performance admixture.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Chemical Teal</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0d9488;"></div>
+                    <div><span class="swatch-info">#0D9488</span><span class="pantone-code">PMS 3272 C</span></div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">SOLV LABS</div>
-                        <div class="name-tag">Functional</div>
-                    </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c1n2')"><span class="slider"></span></label></div>
+                <div id="c1n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">CONCRETE CHEM</div>
+            <p class="concept-text">The most SEO friendly name. It does exactly what it says on the tin. Very corporate and established feel.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Industrial Grey</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#475569;"></div>
+                    <div><span class="swatch-info">#475569</span><span class="pantone-code">PMS 431 C</span></div>
                 </div>
-                <p class="rationale">"Solve" + "Solvent". Focuses on the problem-solving aspect of the admixture. Tailor-made solutions for contractors. Sounds high-end and consultative.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: Client Packaging (Red/Blue)</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #002366;" data-code="Navy (Pantone 289)"></div>
-                        <div class="swatch" style="background: #ef4444;" data-code="Seal Red"></div>
-                        <div class="swatch" style="background: #38bdf8;" data-code="Jerrycan Blue"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('solv', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-solv" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#f59e0b;"></div>
+                    <div><span class="swatch-info">#F59E0B</span><span class="pantone-code">PMS 123 C</span></div>
                 </div>
             </div>
-
-             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">KORE CHEM</div>
-                        <div class="name-tag">Foundational</div>
-                    </div>
-                </div>
-                <p class="rationale">Refers to the "Core" of the building. The essential ingredient. Using 'K' makes it distinct and ownable. Strong, monosyllabic punch.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: Solid Foundation</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #475569;" data-code="Concrete Grey"></div>
-                        <div class="swatch" style="background: #10b981;" data-code="Eco Green"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('kore', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-kore" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c1n3')"><span class="slider"></span></label></div>
+                <div id="c1n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">BUILD FLUID</div>
+            <p class="concept-text">Refers to the liquid state of admixture that helps build. Modern and slightly technical.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Fluid Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#3b82f6;"></div>
+                    <div><span class="swatch-info">#3B82F6</span><span class="pantone-code">PMS 2129 C</span></div>
                 </div>
             </div>
-
-             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">AERIX</div>
-                        <div class="name-tag">Technological</div>
-                    </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c1n4')"><span class="slider"></span></label></div>
+                <div id="c1n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">TOTAL BOND</div>
+            <p class="concept-text">Descriptive of the result: totally bonded, strong concrete. Reassures the contractor of structural integrity.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Safety Red</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#dc2626;"></div>
+                    <div><span class="swatch-info">#DC2626</span><span class="pantone-code">PMS 485 C</span></div>
                 </div>
-                <p class="rationale">Sounds like "Air" (lightness/aeration in concrete) + "Matrix" (structure). Highly futuristic. Suggests high-tech lab equipment and advanced molecular engineering.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: High Tech</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #6366f1;" data-code="Indigo"></div>
-                        <div class="swatch" style="background: #e2e8f0;" data-code="Silver"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('aerix', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-aerix" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
-                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c1n5')"><span class="slider"></span></label></div>
+                <div id="c1n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="section-title">02. The Founders (Mahir + Daniel)</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="name-title">MADA STRUCT</div>
-                        <div class="name-tag">Compound</div>
-                    </div>
+    <div class="category-header">
+        <h2 class="category-title">02. Acronyms</h2>
+        <p class="category-desc">Short, punchy, and sound like large multinational corporations.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">DMC LABS</div>
+            <p class="concept-text"><strong>D</strong>aniel <strong>M</strong>ahir <strong>C</strong>hemicals. Sounds established (like BASF or GMC). Easy to brand on Jerrycans.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Client Req (Navy/Red)</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#000080;"></div>
+                    <div><span class="swatch-info">#000080</span><span class="pantone-code">PMS 289 C</span></div>
                 </div>
-                <p class="rationale"><strong>MA</strong>hir + <strong>DA</strong>niel. "Mada" also implies a point of origin or source in some contexts. Paired with "Struct" it sounds established and multinational.</p>
-                <div class="palette-container">
-                    <div class="palette-label">Mood: Corporate Blue (Client Req)</div>
-                    <div class="swatches">
-                        <div class="swatch" style="background: #003366;" data-code="Deep Navy"></div>
-                        <div class="swatch" style="background: #cc0000;" data-code="Deep Red"></div>
-                    </div>
-                </div>
-                <div class="domain-section">
-                    <div class="domain-toggle-wrapper">
-                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
-                        <label class="switch">
-                            <input type="checkbox" onchange="toggleDomain('mada', this)">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div id="details-mada" class="domain-details">
-                        <span class="price-tag">3,000 ETB</span>
-                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
-                    </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#FF0000;"></div>
+                    <div><span class="swatch-info">#FF0000</span><span class="pantone-code">PMS 186 C</span></div>
                 </div>
             </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c2n1')"><span class="slider"></span></label></div>
+                <div id="c2n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">MD-X</div>
+            <p class="concept-text">Mahir & Daniel + "X" (The unknown variable / The solution). Very high-tech and scientific. "The X Factor in Concrete".</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Tech Black</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#000000;"></div>
+                    <div><span class="swatch-info">#000000</span><span class="pantone-code">Process Black</span></div>
+                </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#06b6d4;"></div>
+                    <div><span class="swatch-info">#06B6D4</span><span class="pantone-code">PMS 3115 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c2n2')"><span class="slider"></span></label></div>
+                <div id="c2n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">C.A.S</div>
+            <p class="concept-text">Concrete Admixture Solutions. A classic industrial acronym. It implies "We are THE solution".</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Strong Orange</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#ea580c;"></div>
+                    <div><span class="swatch-info">#EA580C</span><span class="pantone-code">PMS 166 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c2n3')"><span class="slider"></span></label></div>
+                <div id="c2n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">M-PRO</div>
+            <p class="concept-text">Mahir/Modern + Professional. Short, fast to say, and implies "We are the Pros". Very catchy.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Pro Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#2563eb;"></div>
+                    <div><span class="swatch-info">#2563EB</span><span class="pantone-code">PMS 2728 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c2n4')"><span class="slider"></span></label></div>
+                <div id="c2n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">Q.C.C</div>
+            <p class="concept-text">Quality Concrete Chemicals. Builds trust immediately. Clients want Quality above all else.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Quality Gold</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#ca8a04;"></div>
+                    <div><span class="swatch-info">#CA8A04</span><span class="pantone-code">PMS 1245 C</span></div>
+                </div>
+                 <div class="palette-row">
+                    <div class="swatch-box" style="background:#171717;"></div>
+                    <div><span class="swatch-info">#171717</span><span class="pantone-code">Neutral Black</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c2n5')"><span class="slider"></span></label></div>
+                <div id="c2n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+    </div>
 
-            
+    <div class="category-header">
+        <h2 class="category-title">03. Invented</h2>
+        <p class="category-desc">Unique, ownable, and highly brandable. Empty vessels to fill with meaning.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">KOREV</div>
+            <p class="concept-text">Sounds like "Core" but evolved. Strong, Eastern European industrial vibe. Very memorable and unique.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Steel</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#64748b;"></div>
+                    <div><span class="swatch-info">#64748B</span><span class="pantone-code">PMS 5415 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c3n1')"><span class="slider"></span></label></div>
+                <div id="c3n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">ZYLIX</div>
+            <p class="concept-text">Starts with Z (rare). Ends with X. Very scientific. Sounds like a high-tech bonding agent. Future-proof.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Neon Lime</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#84cc16;"></div>
+                    <div><span class="swatch-info">#84CC16</span><span class="pantone-code">PMS 375 C</span></div>
+                </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#111827;"></div>
+                    <div><span class="swatch-info">#111827</span><span class="pantone-code">Black C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c3n2')"><span class="slider"></span></label></div>
+                <div id="c3n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">VELOX</div>
+            <p class="concept-text">Latin root "Veloc" (speed). Implies fast setting, fast action, and efficiency in construction timelines.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Racing Red</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#b91c1c;"></div>
+                    <div><span class="swatch-info">#B91C1C</span><span class="pantone-code">PMS 1807 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c3n3')"><span class="slider"></span></label></div>
+                <div id="c3n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">SYNTHA</div>
+            <p class="concept-text">From "Synthesis" or "Synthetic". Focuses on the chemical composition aspect. Smooth and modern.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Purple Tech</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#7c3aed;"></div>
+                    <div><span class="swatch-info">#7C3AED</span><span class="pantone-code">PMS 2603 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c3n4')"><span class="slider"></span></label></div>
+                <div id="c3n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">QUANTRUM</div>
+            <p class="concept-text">"Quantum" + "Spectrum". Implies the smallest molecular detail (science) and a wide range of solutions.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Deep Space</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#1e1b4b;"></div>
+                    <div><span class="swatch-info">#1E1B4B</span><span class="pantone-code">PMS 276 C</span></div>
+                </div>
+                 <div class="palette-row">
+                    <div class="swatch-box" style="background:#38bdf8;"></div>
+                    <div><span class="swatch-info">#38BDF8</span><span class="pantone-code">PMS 298 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c3n5')"><span class="slider"></span></label></div>
+                <div id="c3n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-header">
+        <h2 class="category-title">04. Compound</h2>
+        <p class="category-desc">Combines two words to create a new, powerful meaning.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">SOLID FLOW</div>
+            <p class="concept-text">An oxymoron that perfectly describes admixture: Makes concrete flow, then makes it solid. Clever and catchy.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Flow Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0284c7;"></div>
+                    <div><span class="swatch-info">#0284C7</span><span class="pantone-code">PMS 3005 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c4n1')"><span class="slider"></span></label></div>
+                <div id="c4n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">EVER BOND</div>
+            <p class="concept-text">Implies longevity. The bond will last forever. Highly reassuring to contractors building large structures.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Brick Red</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#7f1d1d;"></div>
+                    <div><span class="swatch-info">#7F1D1D</span><span class="pantone-code">PMS 1815 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c4n2')"><span class="slider"></span></label></div>
+                <div id="c4n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">CHEM CAST</div>
+            <p class="concept-text">"Chem" (Chemical) + "Cast" (Concrete casting). It bridges the gap between the lab and the construction site.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Lab Green</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#16a34a;"></div>
+                    <div><span class="swatch-info">#16A34A</span><span class="pantone-code">PMS 347 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c4n3')"><span class="slider"></span></label></div>
+                <div id="c4n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">HARD SET</div>
+            <p class="concept-text">Tough, masculine, and strong. Refers to the "setting" process of concrete. Very memorable.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Cement & Black</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#333333;"></div>
+                    <div><span class="swatch-info">#333333</span><span class="pantone-code">PMS Black 7 C</span></div>
+                </div>
+                 <div class="palette-row">
+                    <div class="swatch-box" style="background:#9ca3af;"></div>
+                    <div><span class="swatch-info">#9CA3AF</span><span class="pantone-code">Cool Gray 7 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c4n4')"><span class="slider"></span></label></div>
+                <div id="c4n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">PRIME MIX</div>
+            <p class="concept-text">"Prime" means best/first. "Mix" refers to the product. Suggests this is the best mix on the market.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Royal Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#1e3a8a;"></div>
+                    <div><span class="swatch-info">#1E3A8A</span><span class="pantone-code">PMS 280 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c4n5')"><span class="slider"></span></label></div>
+                <div id="c4n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-header">
+        <h2 class="category-title">05. Metaphorical</h2>
+        <p class="category-desc">Uses imagery or symbolism to convey strength and stability.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">TITAN</div>
+            <p class="concept-text">The Titans were giants of strength. Implies the concrete treated with your product will be unbreakable.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Metallic Silver</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#94a3b8;"></div>
+                    <div><span class="swatch-info">#94A3B8</span><span class="pantone-code">PMS 877 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c5n1')"><span class="slider"></span></label></div>
+                <div id="c5n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">APEX</div>
+            <p class="concept-text">The top, the peak. Suggests your chemistry is superior to all competitors. The "Peak" of the market.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Summit White/Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#f0f9ff;"></div>
+                    <div><span class="swatch-info">#F0F9FF</span><span class="pantone-code">White</span></div>
+                </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0ea5e9;"></div>
+                    <div><span class="swatch-info">#0EA5E9</span><span class="pantone-code">PMS 299 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c5n2')"><span class="slider"></span></label></div>
+                <div id="c5n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">ANCHOR</div>
+            <p class="concept-text">Symbolizes holding things in place, stability, and safety. A very trustworthy name for construction.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Deep Navy</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0f172a;"></div>
+                    <div><span class="swatch-info">#0F172A</span><span class="pantone-code">PMS 289 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c5n3')"><span class="slider"></span></label></div>
+                <div id="c5n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">AEGIS</div>
+            <p class="concept-text">The shield of Zeus. Implies protection against the elements (waterproofing admixtures). High-class.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Bronze/Gold</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#b45309;"></div>
+                    <div><span class="swatch-info">#B45309</span><span class="pantone-code">PMS 876 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c5n4')"><span class="slider"></span></label></div>
+                <div id="c5n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">PILLAR</div>
+            <p class="concept-text">A pillar supports the structure. Your company supports the construction industry. Simple and strong.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Stone Grey</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#cbd5e1;"></div>
+                    <div><span class="swatch-info">#CBD5E1</span><span class="pantone-code">PMS 427 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c5n5')"><span class="slider"></span></label></div>
+                <div id="c5n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-header">
+        <h2 class="category-title">06. Founder Name</h2>
+        <p class="category-desc">Uses the founders' identity to create a legacy brand.</p>
+    </div>
+    <div class="scroller">
+        <div class="card">
+            <div class="name-title">DANMAR</div>
+            <p class="concept-text"><strong>Dan</strong>iel + <strong>Ma</strong>hi<strong>r</strong>. Classic European styling (like Skanska or Liebherr). Sounds like a 100-year-old company.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Client Req</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#1e3a8a;"></div>
+                    <div><span class="swatch-info">#1E3A8A</span><span class="pantone-code">PMS 280 C</span></div>
+                </div>
+                 <div class="palette-row">
+                    <div class="swatch-box" style="background:#ef4444;"></div>
+                    <div><span class="swatch-info">#EF4444</span><span class="pantone-code">PMS 032 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c6n1')"><span class="slider"></span></label></div>
+                <div id="c6n1" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">MADAQ</div>
+            <p class="concept-text"><strong>Ma</strong>hir + <strong>Da</strong>niel + <strong>Q</strong>uality. "Madaq" also sounds like "Made". A very unique, modern twist on founder names.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Modern Violet</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#8b5cf6;"></div>
+                    <div><span class="swatch-info">#8B5CF6</span><span class="pantone-code">PMS 266 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c6n2')"><span class="slider"></span></label></div>
+                <div id="c6n2" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">D & M CHEM</div>
+            <p class="concept-text">Simple, honest, and direct. D&M Chemicals. Reminds people of P&G (Procter & Gamble) or Johnson & Johnson.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Black & White</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#000;"></div>
+                    <div><span class="swatch-info">#000000</span><span class="pantone-code">Black</span></div>
+                </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#fff;"></div>
+                    <div><span class="swatch-info">#FFFFFF</span><span class="pantone-code">White</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c6n3')"><span class="slider"></span></label></div>
+                <div id="c6n3" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name-title">MAHIR-DAN</div>
+            <p class="concept-text">Hyphenated surname style. Very formal. Suggests a family business or a serious partnership of experts.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Classic Navy</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#172554;"></div>
+                    <div><span class="swatch-info">#172554</span><span class="pantone-code">PMS 296 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c6n4')"><span class="slider"></span></label></div>
+                <div id="c6n4" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="name-title">DM GROUP</div>
+            <p class="concept-text">The Daniel & Mahir Group. "Group" makes the startup sound much larger than it is, implying future expansion.</p>
+            <div class="color-section">
+                <span class="color-label">Palette: Global Blue</span>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#2563eb;"></div>
+                    <div><span class="swatch-info">#2563EB</span><span class="pantone-code">PMS 2728 C</span></div>
+                </div>
+            </div>
+            <div class="domain-area">
+                <div class="toggle-row"><span>Check .com</span><label class="switch"><input type="checkbox" onchange="toggle(this, 'c6n5')"><span class="slider"></span></label></div>
+                <div id="c6n5" class="domain-result"><span class="price">3,000 ETB</span><a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggle(checkbox, id) {
+            const resultDiv = document.getElementById(id);
+            if (checkbox.checked) {
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
