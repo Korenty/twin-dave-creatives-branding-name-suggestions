@@ -3,767 +3,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twin Dave Creatives | Brand Strategy Presentation</title>
-    
+    <title>Brand Identity Proposal | Twin Dave Creatives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS VARIABLES & RESET --- */
         :root {
-            --primary-dark: #121212;
-            --secondary-dark: #1E1E1E;
-            --tertiary-dark: #2C2C2C;
-            --accent-orange: #E86A26; /* Derived from Twin Dave Logo */
-            --accent-blue: #00C2FF; /* Derived from the spark in the logo */
-            --text-light: #FFFFFF;
-            --text-grey: #A0A0A0;
-            --border-color: #3A3A3A;
-            --section-spacing: 100px;
+            --bg-dark: #0f1115;
+            --bg-card: #161b22;
+            --primary: #3b82f6; /* Sky Blue reference */
+            --accent: #ef4444; /* Red reference */
+            --gold: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --glass: rgba(22, 27, 34, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
+        h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes glow { 0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); } 50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); } 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); } }
 
-        ul {
-            list-style: none;
-        }
-
-        /* --- UTILITIES --- */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-orange);
-        }
-
-        .section-subtitle {
-            color: var(--text-grey);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--accent-orange);
-            color: var(--text-light);
-            font-weight: 600;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            background-color: #FF7B3A;
-            box-shadow: 0 10px 20px -10px rgba(232, 106, 38, 0.5);
-        }
-
-        /* --- HEADER & NAV --- */
+        /* --- Header --- */
         header {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            z-index: 1000;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-            transition: all 0.4s ease;
-        }
-
-        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 5%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
-        .nav-logo img {
-            height: 40px; /* Adjust based on actual logo file */
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 50px; width: auto; object-fit: contain; }
+        .client-badge { 
+            background: linear-gradient(45deg, var(--primary), #1d4ed8); 
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
             letter-spacing: 1px;
-            position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-orange);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* --- HERO SECTION --- */
-        #hero {
-            height: 100vh;
+        /* --- Hero --- */
+        .hero {
+            height: 90vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            /* Subtle architectural/tech background pattern */
-            background-image: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,0.8)), url('https://images.unsplash.com/photo-1620879806712-c057a001c10b?q=80&w=2574&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: radial-gradient(circle at center, #1e2532 0%, var(--bg-dark) 70%);
+            padding: 20px;
         }
 
-        .hero-content img {
-            max-width: 200px;
-            margin-bottom: 2rem;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1;
+            background: -webkit-linear-gradient(#fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-out;
         }
 
-        .hero-content h1 span {
-            color: var(--accent-orange);
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            animation: glow 3s infinite;
         }
 
-        .client-tag {
-            font-size: 1.25rem;
-            color: var(--text-grey);
-            margin-bottom: 3rem;
-            font-weight: 300;
+        /* --- Sections --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 100px 0 50px;
+            color: var(--primary);
+            letter-spacing: 5px;
         }
 
-        /* --- IDENTITY ANALYSIS (CARDS) --- */
-        #analysis {
-            padding: var(--section-spacing) 0;
-            background-color: var(--secondary-dark);
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .analysis-grid {
+        /* --- Cards Grid --- */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
         }
 
         .card {
-            background: var(--tertiary-dark);
-            padding: 3rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-orange);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .card-header {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
         }
 
-        .card-icon {
-            color: var(--accent-blue);
+        .name-title {
             font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
         }
 
-        .card ul li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-grey);
-        }
-
-        .card ul li::before {
-            content: '•';
-            color: var(--accent-orange);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* --- NAMING FRAMEWORK (THE ADVANCED TABLE) --- */
-        #naming-options {
-            padding: var(--section-spacing) 0;
-            background-color: var(--primary-dark);
-        }
-
-        /* Tabs Styling */
-        .tabs-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-
-        .tab-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-grey);
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .tab-btn:hover {
-            color: var(--text-light);
-            background-color: var(--tertiary-dark);
-        }
-
-        .tab-btn.active {
-            color: var(--text-light);
-            background-color: var(--accent-orange);
-        }
-
-        /* Tab Content Styling */
-        .tab-content {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.5s ease;
-        }
-
-        .tab-content.active {
-            display: block; /* Show only active */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* The Grid "Table" Structure */
-        .data-grid {
-            display: grid;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .grid-header {
-            display: grid;
-            grid-template-columns: 1.5fr 2fr 1.5fr 1fr;
-            background-color: var(--tertiary-dark);
-            font-weight: 800;
+        .name-tag {
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.85rem;
-            color: var(--accent-blue);
+            color: var(--primary);
+            font-weight: 600;
         }
 
-        .grid-row {
-            display: grid;
-            grid-template-columns: 1.5fr 2fr 1.5fr 1fr;
-            border-top: 1px solid var(--border-color);
-            transition: background-color 0.2s ease;
-        }
-
-        .grid-row:hover {
-            background-color: var(--secondary-dark);
-        }
-
-        .grid-cell {
-            padding: 1.5rem;
-        }
-
-        .name-cell {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-        }
-
-        .ideology-cell h5 {
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-        
-        .ideology-cell p {
+        .rationale {
             font-size: 0.95rem;
-            color: var(--text-grey);
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            border-left: 2px solid var(--border);
+            padding-left: 15px;
         }
 
-        .color-swatches {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
+        /* --- Color Palette Visuals --- */
+        .palette-container {
+            margin-bottom: 25px;
         }
-
+        .palette-label { font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; color: #fff; }
+        .swatches { display: flex; gap: 10px; }
         .swatch {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 2px solid var(--border-color);
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            cursor: pointer;
+        }
+        .swatch:hover::after {
+            content: attr(data-code);
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            white-space: nowrap;
         }
 
-        /* --- DOMAIN & COST (PRICING CARDS) --- */
-        #domain-cost {
-            padding: var(--section-spacing) 0;
-            background-color: var(--secondary-dark);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--primary-dark);
-            padding: 3rem 2rem;
+        /* --- Domain Logic --- */
+        .domain-section {
+            background: rgba(0,0,0,0.3);
             border-radius: 12px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 15px;
+            margin-top: auto;
         }
 
-        .pricing-card.featured {
-            border-color: var(--accent-orange);
-            transform: scale(1.05);
-            z-index: 2;
-            box-shadow: 0 20px 40px -20px rgba(232, 106, 38, 0.3);
+        .domain-toggle-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-light);
-            margin: 1.5rem 0;
-            display: block;
-        }
-        
-        .price span {
-            font-size: 1rem;
-            color: var(--text-grey);
-            font-weight: 400;
-        }
-
-        .status {
+        .switch {
+            position: relative;
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+            width: 50px;
+            height: 24px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #374151;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--primary); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        .domain-details {
+            display: none; /* Hidden by default */
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
             font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            transition: 0.2s;
         }
+        .btn-buy:hover { opacity: 0.9; }
 
-        .status.available { background: rgba(0, 194, 255, 0.2); color: var(--accent-blue); }
-        .status.premium { background: rgba(232, 106, 38, 0.2); color: var(--accent-orange); }
-        .status.taken { background: rgba(255, 58, 58, 0.2); color: #ff3a3a; }
-
-        .pricing-card p {
-            color: var(--text-grey);
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        /* --- FOOTER --- */
+        /* --- Footer --- */
         footer {
-            background: #0a0a0a;
-            padding: 5rem 0;
             text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border);
+            background: #0a0e17;
+            color: var(--text-muted);
         }
 
-        .footer-logo {
-            max-width: 150px;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .footer-cta {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .copyright {
-            color: var(--text-grey);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-            margin-top: 2rem;
-            width: 90%;
-            margin: 2rem auto 0;
-        }
-
-        /* --- RESPONSIVE --- */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simple hide for mobile example */
-            .grid-header, .grid-row { grid-template-columns: 1fr; } /* Stack table on mobile */
-            .grid-header { display: none; } /* Hide headers on mobile stack */
-            .grid-cell { padding: 1rem; border-bottom: 1px solid var(--border-color); }
-            .pricing-card.featured { transform: scale(1); }
+            .hero h1 { font-size: 3rem; }
+            header { padding: 15px 20px; }
+            .logo-container span { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container nav">
-            <div class="nav-logo">
-                <img src="TwinDaveLogo.png" alt="Twin Dave Creatives Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#analysis">Identity Analysis</a></li>
-                <li><a href="#naming-options">Naming Strategy</a></li>
-                <li><a href="#domain-cost">Domain & Investment</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="logo-container">
+            <img src="twindave-logo.png" alt="Twin Dave Creatives Logo" onerror="this.src='https://via.placeholder.com/50x50/3b82f6/ffffff?text=TD'">
+            <span style="font-weight: 700; font-family: 'Rajdhani'; font-size: 1.2rem;">TWIN DAVE</span>
         </div>
+        <div class="client-badge">Client: Jan Finishing Contractor</div>
     </header>
 
-    <section id="hero">
-        <div class="hero-content container">
-            <img src="TwinDaveLogo.png" alt="Twin Dave Creatives Logo">
-            <h1>Defining the Future of<br><span>Finishing Trades.</span></h1>
-            <p class="client-tag">Brand Identity Strategy prepared for: <strong>Jan Finishing Contractor</strong></p>
-            <a href="#analysis" class="btn">Explore The Findings</a>
-        </div>
+    <section class="hero">
+        <h4>Identity Proposal</h4>
+        <h1>The Future of<br>Concrete Admixtures</h1>
+        <p>A strategic brand analysis for the new manufacturing venture by Founders Mahir & Daniel. Precision. Strength. Innovation.</p>
+        <div class="scroll-indicator">SCROLL TO EXPLORE NAMES</div>
     </section>
 
-    <section id="analysis">
-        <div class="container">
-            <h2 class="section-title">Identity Analysis</h2>
-            <p class="section-subtitle">Bridging the gap between current market perception and future strategic goals.</p>
-
-            <div class="analysis-grid">
-                <div class="card">
-                    <h3><span class="card-icon">&#9679;</span> The Current Landscape</h3>
-                    <ul>
-                        <li><strong>Perception:</strong> Reliable local tradesman, functional, "gets the job done."</li>
-                        <li><strong>Limitations:</strong> Name lacks scalability; blends in with general contractors; doesn't communicate specialized finishing expertise.</li>
-                        <li><strong>Visual Tone:</strong> Utilitarian, undistinguished in a competitive market.</li>
-                    </ul>
+    <div class="container">
+        <h2 class="section-title">01. The Innovators (Scientific & Abstract)</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">VYLUM</div>
+                        <div class="name-tag">Abstract / Scientific</div>
+                    </div>
                 </div>
-                <div class="card" style="border-color: var(--accent-blue);">
-                    <h3><span class="card-icon" style="color: var(--accent-orange);">&#9733;</span> The Future Beacon</h3>
-                    <ul>
-                        <li><strong>Goal Perception:</strong> Premium finishing authority, meticulous detail, architectural partner.</li>
-                        <li><strong>Requirement:</strong> A name that sounds engineered, high-value, and capable of handling complex commercial projects.</li>
-                        <li><strong>Visual Tone:</strong> Sleek, industrial-chic, disciplined, and sophisticated.</li>
-                    </ul>
+                <p class="rationale">Derived from "Volume" and "Lumen" (light/future). It suggests a chemical solution that adds substance and brightness. Short, 5-letter domain potential, incredibly modern.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: Clinical Precision</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #00f2ea;" data-code="Cyan Neon"></div>
+                        <div class="swatch" style="background: #ffffff;" data-code="Pure White"></div>
+                        <div class="swatch" style="background: #334155;" data-code="Lab Slate"></div>
+                    </div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('vylum', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-vylum" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">NEXCRETE</div>
+                        <div class="name-tag">Descriptive / Future</div>
+                    </div>
+                </div>
+                <p class="rationale">"Next" + "Concrete". Direct, easy to understand, and implies the next generation of building technology. Very strong for SEO within the industry.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: Industrial Strength</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #f59e0b;" data-code="Safety Yellow"></div>
+                        <div class="swatch" style="background: #1e293b;" data-code="Dark Asphalt"></div>
+                    </div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('nexcrete', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-nexcrete" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">SOLV LABS</div>
+                        <div class="name-tag">Functional</div>
+                    </div>
+                </div>
+                <p class="rationale">"Solve" + "Solvent". Focuses on the problem-solving aspect of the admixture. Tailor-made solutions for contractors. Sounds high-end and consultative.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: Client Packaging (Red/Blue)</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #002366;" data-code="Navy (Pantone 289)"></div>
+                        <div class="swatch" style="background: #ef4444;" data-code="Seal Red"></div>
+                        <div class="swatch" style="background: #38bdf8;" data-code="Jerrycan Blue"></div>
+                    </div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('solv', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-solv" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">KORE CHEM</div>
+                        <div class="name-tag">Foundational</div>
+                    </div>
+                </div>
+                <p class="rationale">Refers to the "Core" of the building. The essential ingredient. Using 'K' makes it distinct and ownable. Strong, monosyllabic punch.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: Solid Foundation</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #475569;" data-code="Concrete Grey"></div>
+                        <div class="swatch" style="background: #10b981;" data-code="Eco Green"></div>
+                    </div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('kore', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-kore" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">AERIX</div>
+                        <div class="name-tag">Technological</div>
+                    </div>
+                </div>
+                <p class="rationale">Sounds like "Air" (lightness/aeration in concrete) + "Matrix" (structure). Highly futuristic. Suggests high-tech lab equipment and advanced molecular engineering.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: High Tech</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #6366f1;" data-code="Indigo"></div>
+                        <div class="swatch" style="background: #e2e8f0;" data-code="Silver"></div>
+                    </div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('aerix', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-aerix" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="naming-options">
-        <div class="container">
-            <h2 class="section-title">Strategic Naming Options</h2>
-            <p class="section-subtitle">A curated framework of high-impact names designed for perceived value and market growth.</p>
-
-            <div class="tabs-nav">
-                <button class="tab-btn active" onclick="openTab(event, 'Descriptive')">Descriptive</button>
-                <button class="tab-btn" onclick="openTab(event, 'Acronym')">Acronym/Tech</button>
-                <button class="tab-btn" onclick="openTab(event, 'Metaphorical')">Metaphorical</button>
-                <button class="tab-btn" onclick="openTab(event, 'Compound')">Compound</button>
-            </div>
-
-            <div id="Descriptive" class="tab-content active">
-                <div class="data-grid">
-                    <div class="grid-header">
-                        <div class="grid-cell">Suggested Name</div>
-                        <div class="grid-cell">Ideology & Winner Factors</div>
-                        <div class="grid-cell">Color Scheme Palette</div>
-                        <div class="grid-cell">Logo Tonality</div>
+    <div class="container">
+        <h2 class="section-title">02. The Founders (Mahir + Daniel)</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="name-title">MADA STRUCT</div>
+                        <div class="name-tag">Compound</div>
                     </div>
-                    <div class="grid-row">
-                        <div class="grid-cell name-cell">Jan Architectural Finishes</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: Elevated clarity.</h5>
-                            <p>Winner Factor: Immediate authority. Shifts perception from "contractor" to "architectural partner."</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #2C3E50;"></div>
-                                <div class="swatch" style="background: #BDC3C7;"></div>
-                                <div class="swatch" style="background: #C0392B;"></div>
-                            </div>
-                            <p style="font-size: 0.8rem; margin-top: 5px;">Slate, Silver, Deep Red Accent</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Authoritative, precise, modernist typography.</p></div>
+                </div>
+                <p class="rationale"><strong>MA</strong>hir + <strong>DA</strong>niel. "Mada" also implies a point of origin or source in some contexts. Paired with "Struct" it sounds established and multinational.</p>
+                <div class="palette-container">
+                    <div class="palette-label">Mood: Corporate Blue (Client Req)</div>
+                    <div class="swatches">
+                        <div class="swatch" style="background: #003366;" data-code="Deep Navy"></div>
+                        <div class="swatch" style="background: #cc0000;" data-code="Deep Red"></div>
                     </div>
-                    <div class="grid-row">
-                        <div class="grid-cell name-cell">The Finishing Collective</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: The specialist boutique.</h5>
-                            <p>Winner Factor: Implies a curated team of expert artisans rather than a general labor force.</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #1B1B1B;"></div>
-                                <div class="swatch" style="background: #D4AF37;"></div>
-                                <div class="swatch" style="background: #F5F5F5;"></div>
-                            </div>
-                             <p style="font-size: 0.8rem; margin-top: 5px;">Charcoal, Muted Gold, Off-White</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Exclusive, high-end, elegant serif font.</p></div>
+                </div>
+                <div class="domain-section">
+                    <div class="domain-toggle-wrapper">
+                        <span style="font-size: 0.8rem;">Check Availability (.com)</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleDomain('mada', this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="details-mada" class="domain-details">
+                        <span class="price-tag">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" target="_blank" class="btn-buy">Secure Domain</a>
                     </div>
                 </div>
             </div>
 
-            <div id="Acronym" class="tab-content">
-                 <div class="data-grid">
-                    <div class="grid-header">
-                        <div class="grid-cell">Suggested Name</div>
-                        <div class="grid-cell">Ideology & Winner Factors</div>
-                        <div class="grid-cell">Color Scheme Palette</div>
-                        <div class="grid-cell">Logo Tonality</div>
-                    </div>
-                    <div class="grid-row">
-                        <div class="grid-cell name-cell">JFC Surface Tech</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: Functional professionalism.</h5>
-                            <p>Winner Factor: Instant credibility. Sounds like an established industrial partner. "Tech" adds modernity.</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #003366;"></div>
-                                <div class="swatch" style="background: #6699CC;"></div>
-                                <div class="swatch" style="background: #FFFFFF;"></div>
-                            </div>
-                            <p style="font-size: 0.8rem; margin-top: 5px;">Industrial Blue, Steel, White</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Reliable, understated, strong block letters.</p></div>
-                    </div>
-                     <div class="grid-row">
-                        <div class="grid-cell name-cell">J-FIN</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: Short, punchy, modern.</h5>
-                            <p>Winner Factor: Highly memorable and easy to visualize on site branding and vehicles. Sounds agile.</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #FF4500;"></div>
-                                <div class="swatch" style="background: #333333;"></div>
-                                <div class="swatch" style="background: #EFEFEF;"></div>
-                            </div>
-                             <p style="font-size: 0.8rem; margin-top: 5px;">Safety Orange, Dark Grey, Light Grey</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Dynamic, fast, bold sans-serif.</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="Metaphorical" class="tab-content">
-                 <div class="data-grid">
-                    <div class="grid-header">
-                        <div class="grid-cell">Suggested Name</div>
-                        <div class="grid-cell">Ideology & Winner Factors</div>
-                        <div class="grid-cell">Color Scheme Palette</div>
-                        <div class="grid-cell">Logo Tonality</div>
-                    </div>
-                    <div class="grid-row">
-                        <div class="grid-cell name-cell">APEX FINISHES</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: The highest point; the pinnacle.</h5>
-                            <p>Winner Factor: Immediately positions the brand as the market leader in quality. A premium cue.</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #000000;"></div>
-                                <div class="swatch" style="background: #C0C0C0;"></div>
-                                <div class="swatch" style="background: #4169E1;"></div>
-                            </div>
-                            <p style="font-size: 0.8rem; margin-top: 5px;">Black, Silver, Royal Blue Accent</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Elite, superior, upward-pointing abstract icon.</p></div>
-                    </div>
-                </div>
-            </div>
-
-             <div id="Compound" class="tab-content">
-                 <div class="data-grid">
-                    <div class="grid-header">
-                        <div class="grid-cell">Suggested Name</div>
-                        <div class="grid-cell">Ideology & Winner Factors</div>
-                        <div class="grid-cell">Color Scheme Palette</div>
-                        <div class="grid-cell">Logo Tonality</div>
-                    </div>
-                    <div class="grid-row">
-                        <div class="grid-cell name-cell">SURFACE&CO.</div>
-                        <div class="grid-cell ideology-cell">
-                            <h5>Ideology: The modern collective.</h5>
-                            <p>Winner Factor: The "& Co." suggests a team of specialized craftsmen. "Surface" is the core of the trade.</p>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="color-swatches">
-                                <div class="swatch" style="background: #556B2F;"></div>
-                                <div class="swatch" style="background: #F5F5DC;"></div>
-                                <div class="swatch" style="background: #3E2723;"></div>
-                            </div>
-                            <p style="font-size: 0.8rem; margin-top: 5px;">Olive Drab, Beige, Dark Brown (Organic/Earthen)</p>
-                        </div>
-                        <div class="grid-cell ideology-cell"><p>Grounded, sustainable, strong emblem.</p></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="domain-cost">
-        <div class="container">
-            <h2 class="section-title">Domain Reality & Investment</h2>
-            <p class="section-subtitle">Analyzing digital real estate availability and acquisition costs for top contenders.</p>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>The "Exact Match"</h3>
-                    <p>JanArchitecturalFinishes.com</p>
-                    <span class="status available">Available</span>
-                    <div class="price">$12.99 <span>/ year</span></div>
-                    <p>Excellent availability due to specific length. High trust factor, but long to type.</p>
-                    <button class="btn">Secure Now</button>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>The "Premium Short"</h3>
-                    <p>JFIN.com</p>
-                    <span class="status premium">Premium Broker</span>
-                    <div class="price">$4,500+ <span>(Estimated One-time)</span></div>
-                    <p>4-letter .coms are rare digital assets. High initial cost for massive long-term brand equity.</p>
-                    <button class="btn">Inquire Broker</button>
-                </div>
-                <div class="pricing-card">
-                    <h3>The "Smart Alternative"</h3>
-                    <p>ApexFinishing.co</p>
-                    <span class="status taken">.com Taken</span>
-                    <div class="price">$25.00 <span>/ year</span></div>
-                    <p>Using modern TLDs like .co or .io allows for shorter names when the .com is unavailable.</p>
-                    <button class="btn">Explore Alternatives</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <img src="TwinDaveLogo.png" alt="Twin Dave Creatives Logo" class="footer-logo">
-            <h2 class="footer-cta">Ready to build this brand identity?</h2>
-            <button class="btn">Contact Twin Dave</button>
-            <div class="copyright">
-                &copy; 2023 Twin Dave Creatives. All Rights Reserved. Confidential presentation for Jan Finishing Contractor.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Function to handle Tab Switching in the Naming Framework section
-        function openTab(evt, tabName) {
-            // 1. Get all elements with class="tab-content" and hide them
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-
-            // 2. Get all elements with class="tab-btn" and remove the class "active"
-            var tablinks = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // 3. Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(tabName).style.display = "block";
-            // A small timeout to allow the display:block to register before adding opacity class for fade effect
-            setTimeout(() => {
-                 document.getElementById(tabName).classList.add("active");
-            }, 10);
-           
-            evt.currentTarget.className += " active";
-        }
-
-        // Optional: Add a slight header transparency change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(18, 18, 18, 0.98)';
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-            } else {
-                header.style.background = 'rgba(18, 18, 18, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
-    </script>
-
-</body>
-</html>
+            
