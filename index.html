@@ -18,7 +18,7 @@
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
-            --glass: rgba(21, 25, 33, 0.85);
+            --glass: rgba(21, 25, 33, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +70,7 @@
             text-align: center;
             background: radial-gradient(circle at 50% 50%, #1e2532 0%, var(--bg-dark) 80%);
             padding: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
@@ -89,6 +89,38 @@
             margin-bottom: 30px;
             font-size: 1.1rem;
         }
+
+        /* --- RESEARCH SECTION (NEW) --- */
+        .research-container {
+            padding: 60px 5%;
+            background: linear-gradient(to bottom, #0f1218, #0b0d10);
+            margin-bottom: 60px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .research-header { text-align: center; margin-bottom: 40px; }
+        .research-header h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+        .research-header p { max-width: 700px; margin: 0 auto; color: var(--text-muted); }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .insight-card {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .insight-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: #fff; }
+        .insight-card p { font-size: 0.9rem; color: #cbd5e1; }
+        .insight-icon { font-size: 2rem; margin-bottom: 15px; color: var(--primary); display: block; }
 
         /* --- Reference Table (Naming Rules) --- */
         .rules-section {
@@ -250,6 +282,60 @@
         }
         .btn-buy:active { transform: scale(0.98); }
 
+        /* --- WINNER SECTION --- */
+        .winner-section {
+            margin: 100px 5% 50px 5%;
+            background: radial-gradient(circle at center, #1e293b 0%, #0b0d10 100%);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.1);
+        }
+
+        .winner-label {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 5px 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .winner-title {
+            font-size: clamp(3rem, 10vw, 5rem);
+            text-align: center;
+            margin: 30px 0 20px;
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .winner-desc {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .winner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- Mobile Table Fix --- */
@@ -270,10 +356,35 @@
         <h4 style="color:var(--primary); letter-spacing:3px; margin-bottom:10px;">Startup Identity</h4>
         <h1>Concrete<br>Admixture<br>Innovation</h1>
         <p>Strategic Naming Proposal for Mahir & Daniel's Manufacturing Venture.</p>
-        <div style="font-size:0.8rem; border:1px solid var(--border); padding:8px 20px; border-radius:20px; margin-top:20px;">
-            Swipe Cards horizontally to view options &rarr;
+    </section>
+
+    <section class="research-container">
+        <div class="research-header">
+            <h4>Strategic Analysis</h4>
+            <h2>The Science of Strength</h2>
+            <p>Our research into the construction chemical market reveals a critical gap. Current market players are utilitarian and static. To dominate, the new brand must be dynamic, precise, and scientifically authoritative.</p>
+        </div>
+        <div class="insight-grid">
+            <div class="insight-card">
+                <span class="insight-icon">&#9881;</span> <h3>The Market Gap</h3>
+                <p>Competitors sell "buckets of chemicals." We will sell "Construction Integrity." The brand must move away from commodity trading and position itself as a high-end Lab-to-Site solution partner.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-icon">&#9876;</span> <h3>The Archetype</h3>
+                <p><strong>The Alchemist & The Ruler.</strong> We combine the Alchemist's ability to transform states (liquid to stone) with the Ruler's authority and control over the construction outcome.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-icon">&#127912;</span> <h3>Visual Strategy</h3>
+                <p>While the industry leans on dull greys, we leverage the Founders' preference (Navy & Red) but elevate it. Navy represents the "Corporate Trust" while Red represents the "Chemical Reaction" and "Passion".</p>
+            </div>
         </div>
     </section>
+
+    <div style="text-align:center; margin-bottom: 20px;">
+        <span style="font-size:0.8rem; border:1px solid var(--border); padding:8px 20px; border-radius:20px; color:var(--text-muted);">
+            Swipe Name Cards Horizontally &rarr;
+        </span>
+    </div>
 
     <section class="rules-section">
         <h3 style="margin-bottom:15px; color:#fff;">Naming Strategy Reference</h3>
@@ -833,6 +944,49 @@
             </div>
         </div>
     </div>
+
+    <section class="winner-section">
+        <div class="winner-label">Creative's Ultimate Recommendation</div>
+        <h2 class="winner-title">MaDbond</h2>
+        <p class="winner-desc">The perfect synthesis of the founders' legacy and future-proof industrial branding.</p>
+        
+        <div class="winner-grid">
+            <div style="text-align:left;">
+                <h4 style="color:var(--gold); margin-bottom:10px;">The Concept</h4>
+                <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.7;">
+                    <strong>Origin:</strong> <span style="color:#fff;">Ma</span>hir + <span style="color:#fff;">D</span>aniel + <span style="color:#fff;">Bond</span>.<br><br>
+                    <strong>The Twist:</strong> "Mad" represents an intense passion for quality and extreme strength (e.g., "Mad Skills"). "Bond" represents the chemical function. It breaks the boring industrial mold while honoring the founders. It is catchy, short, and impossible to forget.
+                </p>
+            </div>
+            
+            <div style="background:rgba(0,0,0,0.4); padding:20px; border-radius:12px;">
+                <h4 style="color:var(--gold); margin-bottom:10px;">Visual Identity</h4>
+                <p style="color:var(--text-muted); font-size:0.8rem; margin-bottom:10px;">FOUNDERS' PALETTE (ELEVATED)</p>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#0f172a;"></div>
+                    <div><span class="swatch-info">Deep Navy</span><span class="pantone-code">PMS 289 C</span></div>
+                </div>
+                <div class="palette-row">
+                    <div class="swatch-box" style="background:#ef4444;"></div>
+                    <div><span class="swatch-info">Power Red</span><span class="pantone-code">PMS 485 C</span></div>
+                </div>
+                
+                <div class="domain-area" style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+                    <div class="toggle-row">
+                        <span style="color:#fff;">Domain Status</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggle(this, 'winner1')">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="winner1" class="domain-result">
+                        <span class="price">3,000 ETB</span>
+                        <a href="https://my.yegara.com/order.php?step=1&productGroup=11" class="btn-buy">Secure Domain</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
         function toggle(checkbox, id) {
